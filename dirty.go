@@ -39,7 +39,6 @@ func (d *Dirty) Set(key string, val interface{}) {
 			d.lock.Unlock()
 		}
 	}
-	// d.flush()
 }
 
 func (d *Dirty) Flush() error {
