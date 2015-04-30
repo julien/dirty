@@ -41,6 +41,7 @@ func (d *Dirty) Set(key string, val interface{}) {
 	}
 }
 
+// Flush saves all the key/values to a .json file
 func (d *Dirty) Flush() error {
 
 	f, err := os.Create(d.Path)
@@ -63,6 +64,7 @@ func (d *Dirty) Flush() error {
 	return nil
 }
 
+// Read loads all the key/values for a json file
 func (d *Dirty) Read() error {
 	if d.Path == "" {
 		return errors.New("No path")
