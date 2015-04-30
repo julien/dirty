@@ -1,4 +1,4 @@
-package main
+package dirty
 
 import (
 	"bufio"
@@ -93,7 +93,7 @@ func (d *Dirty) Get(key string) interface{} {
 // Keys returns all keys
 func (d *Dirty) Keys() []string {
 	var keys []string
-	for k, _ := range d.docs {
+	for k := range d.docs {
 		keys = append(keys, k)
 	}
 	return keys
